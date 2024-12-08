@@ -1,0 +1,64 @@
+<div class="fixed top-0 z-50 right-0 left-0 bg-[#69f0ae] text-gray-800 lg:px-20 sm:px-5">
+    <div class="  h-16 flex items-center justify-between">
+
+        <div class="flex items-center ">
+            <div class="mr-5">
+                <img class="w-10 rounded-full  filter grayscale " src="https://tse1.mm.bing.net/th?id=OIP.JJj6cNX3VYGmB52VBvLp1AHaGj&pid=Api&P=0&h=180" alt="EzyCommerce">
+            </div>
+    
+            <div class="">
+                <div class="flex items-center space-x-4">
+                    <a routerlink="/" class="text-gray-800 font-semibold text-lg">
+                        EzyCommerce
+                    </a>
+                    <div>
+                        <button class="open-button"(click)="opennavbarContent('men')"mat-button>Men</button>
+                    </div>
+                    <div>
+                        <button class="open-button"(click)="opennavbarContent('women')"mat-button>Women</button>
+                    </div>
+                    <div>
+                        <button class="open-button"(click)="opennavbarContent('men')"mat-button>Men</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="flex items-center">
+
+            <button (click)="navigateTo('cart')" mat-button>
+                <mat-icon class="mr-5">shopping_cart</mat-icon>
+            </button>
+            <button *ngIf="true" mat-raised-button type="submit" color="accent">
+                <mat-icon>login</mat-icon>
+            </button>
+            <div class="relative ml-3 flex items-center">
+                <button mat-button type="submit" color="accent"></button>
+                <div *ngIf="false" class="ml-3 flex items-center">
+                    <div class="flex items-center space-x-5">
+                        <span class="font-bold text-lg">Harshal</span>
+                        <button mat-button [matMenuTriggerFor]="profileMenu">
+                            <img src="https://cdn.pixabay.com/photo/2017/01/31/21/22/avatar-2027363_640.png" class="size-7 "alt=" ">
+                        </button>
+                        <mat-menu #profileMenu="matMenu">
+                            <button mat-menu-item>Orders</button>
+                            <button mat-menu-item>Profile</button>
+                            <button mat-menu-item>Logout</button>
+                        </mat-menu>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div *ngIf="isNavbarContentOpen" class="modal-container">
+        <app-nav-content [selectedSection]="currentSection" />
+    </div>
+
+</div>
+   
+  
+
